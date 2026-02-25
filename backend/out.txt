@@ -1,0 +1,2 @@
+Status: 201
+Body: {"_id":"699f11bb5634745118cc51e2","name":"User3","email":"test1772032442854@test.com","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OWYxMWJiNTYzNDc0NTExOGNjNTFlMiIsImlhdCI6MTc3MjAzMjQ0MywiZXhwIjoxNzc0NjI0NDQzfQ.EYxZiAEkkMEE-yJ7iF_pEXy0UFZrzNW-aKzGQ017E3A"}

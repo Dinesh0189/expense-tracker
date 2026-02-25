@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
-import axios from 'axios';
+import api from '../api/axios.js';
 
 const AuthContext = createContext();
 
@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (email, password) => {
         try {
-            const { data } = await axios.post('http://localhost:5000/api/auth/login', {
+            const { data } = await api.post('/auth/login', {
                 email,
                 password,
             });
@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (name, email, password) => {
         try {
-            const { data } = await axios.post('http://localhost:5000/api/auth/register', {
+            const { data } = await api.post('/auth/register', {
                 name,
                 email,
                 password,
@@ -64,7 +64,7 @@ export const AuthProvider = ({ children }) => {
                     Authorization: `Bearer ${user.token}`,
                 },
             };
-            const response = await axios.put('http://localhost:5000/api/auth/profile', data, config);
+            const response = await api.put('/auth/profile', data, config);
 
             // Update local storage and state with new user info (keeping the token)
             const updatedUser = { ...user, ...response.data, token: user.token };
